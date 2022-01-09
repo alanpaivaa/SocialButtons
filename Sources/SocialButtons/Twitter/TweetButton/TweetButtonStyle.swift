@@ -5,7 +5,7 @@
 import Foundation
 
 /// Defines the style (size) for a Twitter share button.
-public enum TwitterShareButtonStyle: String {
+public enum TweetButtonStyle: String {
     /// Renders a large Tweet button.
     case large
     /// Renders a small Tweet button.

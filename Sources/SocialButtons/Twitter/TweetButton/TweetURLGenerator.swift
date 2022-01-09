@@ -5,7 +5,7 @@
 import Foundation
 
 /// Conformers are able to generate URLs for sharing content on Twitter.
-public protocol TwitterShareURLGenerating {
+public protocol TweetURLGenerating {
     /// Makes an intent URL to share content on Twitter.
     ///
     /// - Parameters:
@@ -17,7 +17,7 @@ public protocol TwitterShareURLGenerating {
     func make(text: String, url: URL?, hashTags: [String], via: String?, related: [String]) -> URL?
 }
 
-public struct TwitterShareURLGenerator: TwitterShareURLGenerating {
+public struct TweetURLGenerator: TweetURLGenerating {
     private enum Constants {
         static let baseURL = "https://twitter.com/intent/tweet"
 

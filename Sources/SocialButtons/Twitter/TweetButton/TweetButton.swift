@@ -7,9 +7,9 @@ import Plot
 import Publish
 
 /// Component that renders a Twitter share button.
-public struct TwitterShareButton: Component {
-    private let urlGenerator: TwitterShareURLGenerating
-    private let style: TwitterShareButtonStyle?
+public struct TweetButton: Component {
+    private let urlGenerator: TweetURLGenerating
+    private let style: TweetButtonStyle?
     private let text: String
     private let url: URL?
     private let hashTags: [String]
@@ -31,8 +31,8 @@ public struct TwitterShareButton: Component {
     ///   - via: Twitter account for attribution.
     ///   - related: Related Twitter accounts to the shared content.
     public init(
-        urlGenerator: TwitterShareURLGenerating = TwitterShareURLGenerator(),
-        style: TwitterShareButtonStyle? = nil,
+        urlGenerator: TweetURLGenerating = TweetURLGenerator(),
+        style: TweetButtonStyle? = nil,
         text: String,
         url: URL? = nil,
         hashTags: [String] = [],
