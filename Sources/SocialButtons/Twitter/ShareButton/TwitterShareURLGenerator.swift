@@ -4,11 +4,11 @@
 
 import Foundation
 
-protocol TwitterURLGenerating {
+public protocol TwitterShareURLGenerating {
     func make(text: String, url: URL?, hashTags: [String], via: String?, related: [String]) -> URL?
 }
 
-struct TwitterURLGenerator: TwitterURLGenerating {
+public struct TwitterShareURLGenerator: TwitterShareURLGenerating {
     private enum Constants {
         static let baseURL = "https://twitter.com/intent/tweet"
 
@@ -21,7 +21,9 @@ struct TwitterURLGenerator: TwitterURLGenerating {
         }
     }
 
-    func make(text: String, url: URL?, hashTags: [String], via: String?, related: [String]) -> URL? {
+    public init() {}
+
+    public func make(text: String, url: URL?, hashTags: [String], via: String?, related: [String]) -> URL? {
         var queryItems = [URLQueryItem]()
 
         queryItems.append(.init(name: Constants.QueryParameters.text, value: text))

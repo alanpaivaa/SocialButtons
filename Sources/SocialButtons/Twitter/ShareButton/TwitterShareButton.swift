@@ -7,7 +7,7 @@ import Plot
 import Publish
 
 public struct TwitterShareButton: Component {
-    private let urlGenerator: TwitterURLGenerating
+    private let urlGenerator: TwitterShareURLGenerating
     private let style: TwitterShareButtonStyle?
     private let text: String
     private let url: URL?
@@ -20,40 +20,21 @@ public struct TwitterShareButton: Component {
     }
 
     public init(
+        urlGenerator: TwitterShareURLGenerating = TwitterShareURLGenerator(),
+        style: TwitterShareButtonStyle? = nil,
         text: String,
         url: URL? = nil,
         hashTags: [String] = [],
         via: String? = nil,
-        related: [String] = [],
-        style: TwitterShareButtonStyle? = nil
-    ) {
-        self.init(
-            urlGenerator: TwitterURLGenerator(),
-            text: text,
-            url: url,
-            hashTags: hashTags,
-            via: via,
-            related: related,
-            style: style
-        )
-    }
-
-    init(
-        urlGenerator: TwitterURLGenerating,
-        text: String,
-        url: URL?,
-        hashTags: [String] = [],
-        via: String?,
-        related: [String] = [],
-        style: TwitterShareButtonStyle?
+        related: [String] = []
     ) {
         self.urlGenerator = urlGenerator
+        self.style = style
         self.text = text
         self.url = url
         self.hashTags = hashTags
         self.via = via
         self.related = related
-        self.style = style
     }
 
     public var body: Component {
