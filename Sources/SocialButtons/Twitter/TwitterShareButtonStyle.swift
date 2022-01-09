@@ -4,7 +4,7 @@
 
 import Foundation
 
-public enum TwitterShareButtonStyle {
+public enum TwitterShareButtonStyle: String {
     case large
     case small
 }
