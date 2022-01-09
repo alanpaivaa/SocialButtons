@@ -5,7 +5,7 @@
 import Foundation
 
 protocol TwitterURLGenerating {
-    func make(text: String) -> URL?
+    func make(text: String, url: URL?) -> URL?
 }
 
 struct TwitterURLGenerator: TwitterURLGenerating {
@@ -14,13 +14,17 @@ struct TwitterURLGenerator: TwitterURLGenerating {
 
         enum QueryParameters {
             static let text = "text"
+            static let url = "url"
         }
     }
 
-    func make(text: String) -> URL? {
+    func make(text: String, url: URL?) -> URL? {
         var queryItems = [URLQueryItem]()
 
         queryItems.append(.init(name: Constants.QueryParameters.text, value: text))
+        if let url = url {
+            queryItems.append(.init(name: Constants.QueryParameters.url, value: url.absoluteString))
+        }
 
         var components = URLComponents(string: Constants.baseURL)
         components?.queryItems = queryItems

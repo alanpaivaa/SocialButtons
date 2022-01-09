@@ -10,18 +10,21 @@ public struct TwitterShareButton: Component {
     private let urlGenerator: TwitterURLGenerating
     private let style: TwitterShareButtonStyle?
     private let text: String
+    private let url: URL?
 
     private var shareURL: URL? {
-        urlGenerator.make(text: text)
+        urlGenerator.make(text: text, url: url)
     }
 
     public init(
         text: String,
+        url: URL? = nil,
         style: TwitterShareButtonStyle? = nil
     ) {
         self.init(
             urlGenerator: TwitterURLGenerator(),
             text: text,
+            url: url,
             style: style
         )
     }
@@ -29,10 +32,12 @@ public struct TwitterShareButton: Component {
     init(
         urlGenerator: TwitterURLGenerating,
         text: String,
-        style: TwitterShareButtonStyle? = nil
+        url: URL?,
+        style: TwitterShareButtonStyle?
     ) {
         self.urlGenerator = urlGenerator
         self.text = text
+        self.url = url
         self.style = style
     }
 
