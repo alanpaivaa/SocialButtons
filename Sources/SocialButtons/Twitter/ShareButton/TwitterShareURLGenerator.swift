@@ -4,7 +4,16 @@
 
 import Foundation
 
+/// Conformers are able to generate URLs for sharing content on Twitter.
 public protocol TwitterShareURLGenerating {
+    /// Makes an intent URL to share content on Twitter.
+    ///
+    /// - Parameters:
+    ///   - text: The text in the tweet.
+    ///   - url: URL to the content to be shared.
+    ///   - hashTags: Hash tags to be placed in the tweet.
+    ///   - via: Twitter account for attribution.
+    ///   - related: Twitter accounts related to the shared content.
     func make(text: String, url: URL?, hashTags: [String], via: String?, related: [String]) -> URL?
 }
 

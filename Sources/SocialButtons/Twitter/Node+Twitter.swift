@@ -5,6 +5,7 @@
 import Plot
 
 public extension Node where Context: HTMLScriptableContext {
+    /// Injects a script that loads other scripts needed for loading Twitter widgets.
     static func loadTwitterWidgets() -> Node {
         .script(
             .init(

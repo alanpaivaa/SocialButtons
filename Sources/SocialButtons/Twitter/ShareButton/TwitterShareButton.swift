@@ -6,6 +6,7 @@ import Foundation
 import Plot
 import Publish
 
+/// Component that renders a Twitter share button.
 public struct TwitterShareButton: Component {
     private let urlGenerator: TwitterShareURLGenerating
     private let style: TwitterShareButtonStyle?
@@ -19,6 +20,16 @@ public struct TwitterShareButton: Component {
         urlGenerator.make(text: text, url: url, hashTags: hashTags, via: via, related: related)
     }
 
+    /// Initializer.
+    ///
+    /// - Parameters:
+    ///   - urlGenerator: The generator that makes the URL to open Twitters with the shared content.
+    ///   - style: The style (size) to render the Tweet button.
+    ///   - text: A text to be Tweeted.
+    ///   - url: URL to be shared on the Tweet.
+    ///   - hashTags: A list of hash tags to be used in the Tweet.
+    ///   - via: Twitter account for attribution.
+    ///   - related: Related Twitter accounts to the shared content.
     public init(
         urlGenerator: TwitterShareURLGenerating = TwitterShareURLGenerator(),
         style: TwitterShareButtonStyle? = nil,
