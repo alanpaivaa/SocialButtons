@@ -26,7 +26,7 @@ let package = Package(
 ## Usage
 
 ### TweetButton
-A [Tweet button](https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview) allows users easily share content from your site.
+A [Tweet button](https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview) allows users to easily share content from your site.
 
 ```swift
 TweetButton(
@@ -55,6 +55,6 @@ If you need to customize the button, you can use a regular `Link` and build the 
 
 ## Contribute
 
-This project is in its early development and community is highly encouraged to contribute, either by adding more components, fixing bugs or improving documentation. Thus, feel free to go ahead and create a Pull Request! 💯
+This project is in its early development and community is highly encouraged to contribute, either by adding more components, fixing bugs, or improving documentation. Thus, feel free to go ahead and create a Pull Request! 💯
 
 I hope you enjoy it, thank you!
