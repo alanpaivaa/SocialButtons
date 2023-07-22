@@ -27,7 +27,7 @@ public struct OpenGraphImage: OpenGraphContent {
         self.alt = alt
     }
 
-    public var metaTags: Node<HTML.HeadContext> {
+    var metaTags: Node<HTML.HeadContext> {
         .group(
             .openGraphMetaTag(named: "og:image", value: url),
             .openGraphMetaTag(named: "og:image:secure_url", value: secureUrl),
