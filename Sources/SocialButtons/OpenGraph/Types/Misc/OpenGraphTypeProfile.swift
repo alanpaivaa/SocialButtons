@@ -24,7 +24,7 @@ public struct OpenGraphTypeProfile: OpenGraphContent {
         self.gender = gender
     }
 
-    var metaTags: Node<HTML.HeadContext> {
+    public var metaTags: Node<HTML.HeadContext> {
         .group(
             .openGraphMetaTag(named: "og:type", value: "profile"),
             .openGraphMetaTag(named: "profile:first_name", value: firstName),

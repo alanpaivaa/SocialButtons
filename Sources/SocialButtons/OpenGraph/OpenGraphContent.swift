@@ -8,6 +8,6 @@
 import Foundation
 import Plot
 
-protocol OpenGraphContent {
+public protocol OpenGraphContent {
     var metaTags: Node<HTML.HeadContext> { get }
 }

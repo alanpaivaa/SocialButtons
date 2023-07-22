@@ -24,7 +24,7 @@ public struct OpenGraphTypeBook: OpenGraphContent {
         self.tags = tags
     }
 
-    var metaTags: Node<HTML.HeadContext> {
+    public var metaTags: Node<HTML.HeadContext> {
         let nodes: [Node<HTML.HeadContext>] = [
             .openGraphMetaTag(named: "og:type", value: "book"),
             .openGraphMetaTag(named: "book:isbn", value: isbn),

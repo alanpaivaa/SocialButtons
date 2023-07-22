@@ -18,7 +18,7 @@ public struct OpenGraphLocale: OpenGraphContent {
         self.alternateIdentifiers = alternateIdentifiers
     }
 
-    var metaTags: Node<HTML.HeadContext> {
+    public var metaTags: Node<HTML.HeadContext> {
         let mainMember = Node<HTML.HeadContext>.openGraphMetaTag(named: "og:locale", value: identifier)
         let alternateMembers = alternateIdentifiers.map { identifier -> Node<HTML.HeadContext> in
                 .openGraphMetaTag(named: "og:locale:alternate", value: identifier)

@@ -27,7 +27,7 @@ public struct OpenGraphTypeAlbum: OpenGraphContent {
         self.releaseDate = releaseDate
     }
 
-    var metaTags: Node<HTML.HeadContext> {
+    public var metaTags: Node<HTML.HeadContext> {
         let albumTags: [Node<HTML.HeadContext>] = [
             .openGraphMetaTag(named: "og:type", value: "music.album"),
             .openGraphMetaTag(named: "music:song:disc", value: disc),

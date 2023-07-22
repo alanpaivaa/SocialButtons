@@ -6,11 +6,16 @@
 //
 
 import Foundation
+import Plot
 
-public enum OpenGraphDeterminer: String {
+public enum OpenGraphDeterminer: String, OpenGraphContent {
     case a
     case an
     case the
     case auto
     case blank = ""
+
+    public var metaTags: Node<HTML.HeadContext> {
+        .openGraphMetaTag(named: "og:determiner", value: rawValue)
+    }
 }

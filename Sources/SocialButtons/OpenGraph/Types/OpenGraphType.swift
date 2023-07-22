@@ -22,7 +22,7 @@ public enum OpenGraphType: OpenGraphContent {
     case tvShow(OpenGraphTypeTVShow)
     case website
 
-    var metaTags: Node<HTML.HeadContext> {
+    public var metaTags: Node<HTML.HeadContext> {
         switch self {
         case .article(let article):
             return article.metaTags

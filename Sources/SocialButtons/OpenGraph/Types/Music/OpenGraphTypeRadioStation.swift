@@ -17,7 +17,7 @@ public struct OpenGraphTypeRadioStation: OpenGraphContent {
         self.creatorUrls = creatorUrls
     }
 
-    var metaTags: Node<HTML.HeadContext> {
+    public var metaTags: Node<HTML.HeadContext> {
         let tags: [Node<HTML.HeadContext>] = [
             .openGraphMetaTag(named: "og:type", value: "music.radio_station"),
             .openGraphMetaTag(named: "og:audio", value: url)

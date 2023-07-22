@@ -24,7 +24,7 @@ public struct OpenGraphVideo: OpenGraphContent {
         self.size = size
     }
 
-    var metaTags: Node<HTML.HeadContext> {
+    public var metaTags: Node<HTML.HeadContext> {
         .group(
             .openGraphMetaTag(named: "og:video", value: url),
             .openGraphMetaTag(named: "og:video:secure_url", value: secureUrl),

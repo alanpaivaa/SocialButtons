@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  OpenGraphMetadata.swift
 //  
 //
 //  Created by Alan Paiva on 7/16/23.
@@ -8,7 +8,7 @@
 import Foundation
 import Plot
 
-public struct OpenGraphInfo {
+public struct OpenGraphMetadata: OpenGraphContent {
     let title: String
     let description: String
     let siteName: String
@@ -40,5 +40,20 @@ public struct OpenGraphInfo {
         self.video = video
         self.locale = locale
         self.determiner = determiner
+    }
+
+    public var metaTags: Node<HTML.HeadContext> {
+        .group(
+            .openGraphMetaTag(named: "og:title", value: title),
+            .openGraphMetaTag(named: "og:description", value: description),
+            .openGraphMetaTag(named: "og:site_name", value: siteName),
+            .openGraphMetaTag(named: "og:url", value: url),
+            .openGraphContent(type),
+            .openGraphContent(image),
+            .openGraphContent(audio),
+            .openGraphContent(video),
+            .openGraphContent(locale),
+            .openGraphContent(determiner)
+        )
     }
 }

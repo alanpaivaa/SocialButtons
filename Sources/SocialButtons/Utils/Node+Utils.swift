@@ -13,25 +13,8 @@ extension Node<HTML.HeadContext> {
         .unwrap(value, { .meta(.property(named), .content("\($0)")) })
     }
 
-    public static func openGraphMetaTags(info: OpenGraphInfo) -> Node<HTML.HeadContext> {
-        .group(
-            .openGraphMetaTag(named: "og:title", value: info.title),
-            .openGraphMetaTag(named: "og:description", value: info.description),
-            .openGraphMetaTag(named: "og:site_name", value: info.siteName),
-            .openGraphMetaTag(named: "og:url", value: info.url),
-            info.type.metaTags,
-            info.image.metaTags,
-            .unwrap(info.audio) { audio in
-                audio.metaTags
-            },
-            .unwrap(info.video) { video in
-                video.metaTags
-            },
-            .unwrap(info.locale) { locale in
-                locale.metaTags
-            },
-            .openGraphMetaTag(named: "og:determiner", value: info.determiner?.rawValue)
-        )
+    public static func openGraphContent(_ content: OpenGraphContent?) -> Node {
+        .unwrap(content) { $0.metaTags }
     }
 }
 

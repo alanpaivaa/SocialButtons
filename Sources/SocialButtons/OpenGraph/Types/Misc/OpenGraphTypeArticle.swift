@@ -30,7 +30,7 @@ public struct OpenGraphTypeArticle: OpenGraphContent {
         self.tags = tags
     }
 
-    var metaTags: Node<HTML.HeadContext> {
+    public var metaTags: Node<HTML.HeadContext> {
         let nodes: [Node<HTML.HeadContext>] = [
             .openGraphMetaTag(named: "og:type", value: "article"),
             .openGraphMetaTag(named: "article:published_time", value: publishedTime?.iso8601DateTimeFormatted()),

@@ -24,7 +24,7 @@ public struct OpenGraphTypePlaylist: OpenGraphContent {
         self.creatorUrls = creatorUrls
     }
 
-    var metaTags: Node<HTML.HeadContext> {
+    public var metaTags: Node<HTML.HeadContext> {
         let tags: [Node<HTML.HeadContext>] = [
             .openGraphMetaTag(named: "og:type", value: "music.playlist"),
             .openGraphMetaTag(named: "music:song:disc", value: disc),

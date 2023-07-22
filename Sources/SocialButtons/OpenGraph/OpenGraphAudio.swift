@@ -21,7 +21,7 @@ public struct OpenGraphAudio: OpenGraphContent {
         self.mimeType = mimeType
     }
 
-    var metaTags: Node<HTML.HeadContext> {
+    public var metaTags: Node<HTML.HeadContext> {
         .group(
             .openGraphMetaTag(named: "og:audio", value: url),
             .openGraphMetaTag(named: "og:audio:secure_url", value: secureUrl),
