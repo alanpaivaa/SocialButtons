@@ -50,7 +50,7 @@ open class OpenGraphTypeMovie {
         let tagsNodes: [Node<HTML.HeadContext>] = [
             .openGraphMetaTag(named: "og:type", value: type),
             .openGraphMetaTag(named: "video:duration", value: duration),
-            .openGraphMetaTag(named: "video:release_date", value: releaseDate?.iso8601Formatted())
+            .openGraphMetaTag(named: "video:release_date", value: releaseDate?.iso8601DateFormatted())
         ]
         return .group(tagsNodes + actorsTags + directorsTags + writersTags + tags)
     }

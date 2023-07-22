@@ -32,7 +32,7 @@ public struct OpenGraphTypeAlbum: OpenGraphContent {
             .openGraphMetaTag(named: "og:type", value: "music.album"),
             .openGraphMetaTag(named: "music:song:disc", value: disc),
             .openGraphMetaTag(named: "music:song:track", value: track),
-            .openGraphMetaTag(named: "music:release_date", value: releaseDate?.iso8601Formatted())
+            .openGraphMetaTag(named: "music:release_date", value: releaseDate?.iso8601DateFormatted())
         ]
         let musicianTags: [Node<HTML.HeadContext>] = musiciansUrls.map { profileUrl in
             .openGraphMetaTag(named: "music:musician", value: profileUrl)
