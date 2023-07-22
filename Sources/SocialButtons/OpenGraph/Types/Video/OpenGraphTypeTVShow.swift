@@ -8,6 +8,7 @@
 import Foundation
 import Plot
 
+/// Additional tags for the `video.tv_show` type, see ``OpenGraphType``
 public final class OpenGraphTypeTVShow: OpenGraphTypeMovie {
     override var type: String {
         "video.tv_show"

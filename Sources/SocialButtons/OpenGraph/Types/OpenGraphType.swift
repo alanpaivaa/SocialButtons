@@ -8,18 +8,42 @@
 import Foundation
 import Plot
 
+/// Open Graph metadata dype, **og:type**
 public enum OpenGraphType: OpenGraphContent {
+    /// music.album
     case album(OpenGraphTypeAlbum)
+
+    /// article
     case article(OpenGraphTypeArticle)
+
+    /// book
     case book(OpenGraphTypeBook)
+
+    /// video.episode
     case episode(OpenGraphTypeEpisode)
+
+    /// video.movie
     case movie(OpenGraphTypeMovie)
+
+    /// video.other
     case otherVideo(OpenGraphTypeVideoOther)
+
+    /// music.playlist
     case playlist(OpenGraphTypePlaylist)
+
+    /// profile
     case profile(OpenGraphTypeProfile)
+
+    /// music.radio_station
     case radioStation(OpenGraphTypeRadioStation)
+
+    /// music.song
     case song(OpenGraphTypeSong)
+
+    /// video.tv_show
     case tvShow(OpenGraphTypeTVShow)
+
+    /// website
     case website
 
     public var metaTags: Node<HTML.HeadContext> {

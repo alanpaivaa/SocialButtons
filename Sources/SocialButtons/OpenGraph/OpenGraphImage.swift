@@ -8,6 +8,7 @@
 import Foundation
 import Plot
 
+/// An image URL which should represent your object within the graph
 public struct OpenGraphImage: OpenGraphContent {
     private let url: String
     private let secureUrl: String?
@@ -15,6 +16,14 @@ public struct OpenGraphImage: OpenGraphContent {
     private let size: CGSize?
     private let alt: String?
 
+    /// Initializer
+    ///
+    /// - Parameters:
+    ///   - url: **og:image**, url to the image
+    ///   - secureUrl: **og:image:secure_url**, an alternate url to use if the webpage requires HTTPS
+    ///   - mimeType: **og:image:type**, a MIME type for this image
+    ///   - size: **og:image:width**, **og:image:height**, the size of the image in pixels
+    ///   - alt: **og:image:alt**, a description of what is in the image
     public init(url: String,
                 secureUrl: String? = nil,
                 mimeType: String? = nil,

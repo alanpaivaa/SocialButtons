@@ -8,6 +8,7 @@
 import Foundation
 import Plot
 
+/// Additional tags for the `profile` type, see ``OpenGraphType``
 public struct OpenGraphTypeArticle: OpenGraphContent {
     private let publishedTime: Date?
     private let modifiedTime: Date?
@@ -16,6 +17,15 @@ public struct OpenGraphTypeArticle: OpenGraphContent {
     private let section: String?
     private let tags: [String]
 
+    /// Initializer
+    ///
+    /// - Parameters:
+    ///   - publishedTime: **article:published_time**, when the article was first published
+    ///   - modifiedTie: **article:modified_time**, when the article was last changed
+    ///   - expirationTime: **article:expiration_time**, when the article is out of date after
+    ///   - authorsUrls: **article:author**, writers of the article
+    ///   - section: **article:section**, a high-level section name
+    ///   - tags: **article:tag**, tag words associated with this article
     public init(publishedTime: Date? = nil,
                 modifiedTime: Date? = nil,
                 expirationTime: Date? = nil,

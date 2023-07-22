@@ -8,10 +8,16 @@
 import Foundation
 import Plot
 
+/// The locale the object tags are marked up in
 public struct OpenGraphLocale: OpenGraphContent {
     private let identifier: String
     private let alternateIdentifiers: [String]
-    
+
+    /// Initializer
+    /// 
+    /// - Parameters:
+    ///   - identifier: **og:locale**, main locale in the format `language_TERRITORY`
+    ///   - alternateIdentifiers: **og:locale:alternate**, an array of other available locales
     public init(identifier: String,
                 alternateIdentifiers: [String] = []) {
         self.identifier = identifier

@@ -8,13 +8,20 @@
 import Foundation
 import Plot
 
+/// Additional tags for the `music.radio_station` type, see ``OpenGraphType``
 public struct OpenGraphTypeRadioStation: OpenGraphContent {
     private let url: String?
-    private let creatorUrls: [String]
-    
-    public init(url: String? = nil, creatorUrls: [String] = []) {
+    private let creatorsUrls: [String]
+
+    /// Initializer
+    ///
+    /// - Parameters:
+    ///   - url: **og:audio**, URL to this radio station
+    ///   - creatorsUrls: **music:creator**, the creator of this playlist
+    public init(url: String? = nil,
+                creatorsUrls: [String] = []) {
         self.url = url
-        self.creatorUrls = creatorUrls
+        self.creatorsUrls = creatorsUrls
     }
 
     public var metaTags: Node<HTML.HeadContext> {
@@ -22,9 +29,9 @@ public struct OpenGraphTypeRadioStation: OpenGraphContent {
             .openGraphMetaTag(named: "og:type", value: "music.radio_station"),
             .openGraphMetaTag(named: "og:audio", value: url)
         ]
-        let creatorTags: [Node<HTML.HeadContext>] = creatorUrls.map { creatorUrl in
+        let creatorsTags: [Node<HTML.HeadContext>] = creatorsUrls.map { creatorUrl in
             .openGraphMetaTag(named: "music:creator", value: creatorUrl)
         }
-        return .group(tags + creatorTags)
+        return .group(tags + creatorsTags)
     }
 }

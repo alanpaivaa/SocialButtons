@@ -8,13 +8,22 @@
 import Foundation
 import Plot
 
+/// Additional tags for the `music.album` type, see ``OpenGraphType``
 public struct OpenGraphTypeAlbum: OpenGraphContent {
     private let songUrls: [String]
     private let disc: Int?
     private let track: Int?
     private let musiciansUrls: [String]
     private let releaseDate: Date?
-    
+
+    /// Initializer
+    ///
+    /// - Parameters:
+    ///   - songUrls: **music:song**, the songs on this album
+    ///   - disc: **music:song:disc**, the same as **music:album:disc** but in reverse
+    ///   - track: **music:song:track**, the same as **music:album:track** but in reverse
+    ///   - musicianUrls: **music:musician**, urls to the musician that made this song
+    ///   - releaseDate: **music:release_date**, the date the album was released
     public init(songUrls: [String] = [],
                 disc: Int? = nil,
                 track: Int? = nil,

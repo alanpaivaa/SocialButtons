@@ -8,6 +8,7 @@
 import Foundation
 import Plot
 
+/// Additional tags for the `video.movie` type, see ``OpenGraphType``
 open class OpenGraphTypeMovie {
     private let actorsUrls: [String]
     private let directorsUrls: [String]
@@ -20,6 +21,15 @@ open class OpenGraphTypeMovie {
         "video.movie"
     }
 
+    /// Initializer
+    ///
+    /// - Parameters:
+    ///   - actorsUrls: **video:actor**, actors in the movie
+    ///   - directorsUrls: **video:director**, directors of the movie
+    ///   - writersUrls: **video:writer**, writers of the movie
+    ///   - duration: **video:duration**, the movie's length in seconds
+    ///   - releaseDate: **video:release_date**, the date the movie was released
+    ///   - tags: **video:tag**, tag words associated with this movie
     public init(actorsUrls: [String] = [],
                 directorsUrls: [String] = [],
                 writersUrls: [String] = [],

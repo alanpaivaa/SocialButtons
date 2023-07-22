@@ -8,11 +8,18 @@
 import Foundation
 import Plot
 
+/// Description of Open Graph audio that complements the main metadata object
 public struct OpenGraphAudio: OpenGraphContent {
     private let url: String
     private let secureUrl: String?
     private let mimeType: String?
 
+    /// Initializer
+    ///
+    /// - Parameters:
+    ///   - url: **og:audio**, url to the audio file
+    ///   - secureUrl: **og:audio:secure_url**, an alternate url to use if the webpage requires HTTPS
+    ///   - mimeType: **og:image:type**, a MIME type for this audio
     public init(url: String,
                 secureUrl: String? = nil,
                 mimeType: String? = nil) {

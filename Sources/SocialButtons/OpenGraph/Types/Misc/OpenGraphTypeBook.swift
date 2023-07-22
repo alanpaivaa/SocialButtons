@@ -8,12 +8,20 @@
 import Foundation
 import Plot
 
+/// Additional tags for the `book` type, see ``OpenGraphType``
 public struct OpenGraphTypeBook: OpenGraphContent {
     private let authorsUrls: [String]
     private let isbn: String?
     private let releaseDate: Date?
     private let tags: [String]
 
+    /// Initializer
+    ///
+    /// - Parameters:
+    ///   - authorsUrls: **book:author**, who wrote this book
+    ///   - isbn: **book:isbn**, the ISBN
+    ///   - releaseDate: **book:release_date**, the date the book was released
+    ///   - tags: **book:tag**, tag words associated with this book
     public init(authorsUrls: [String] = [],
                 isbn: String? = nil,
                 releaseDate: Date? = nil,

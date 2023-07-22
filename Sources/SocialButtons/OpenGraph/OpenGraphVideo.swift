@@ -8,12 +8,20 @@
 import Foundation
 import Plot
 
+/// Describes a video file that complements the main metadata object
 public struct OpenGraphVideo: OpenGraphContent {
     private let url: String
     private let secureUrl: String?
     private let mimeType: String?
     private let size: CGSize?
-    
+
+    /// Initializer
+    ///
+    /// - Parameters:
+    ///   - url: **og:video**, url to the video file
+    ///   - secureUrl: **video:series**, an alternate url to use if the webpage requires HTTPS
+    ///   - mimeType:**video:type**, a MIME type for this video
+    ///   - size: **og:video:width**, **og:video:height**, the size of the video in pixels
     public init(url: String,
                 secureUrl: String? = nil,
                 mimeType: String? = nil,

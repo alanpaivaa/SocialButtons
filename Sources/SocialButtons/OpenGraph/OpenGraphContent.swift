@@ -8,6 +8,8 @@
 import Foundation
 import Plot
 
+/// Conformers are able to render OpenGraph meta tags in a web page
 public protocol OpenGraphContent {
+    /// Meta tags to be rendered
     var metaTags: Node<HTML.HeadContext> { get }
 }

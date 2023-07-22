@@ -8,6 +8,7 @@
 import Foundation
 import Plot
 
+/// The word that appears before this object's title in a sentence
 public enum OpenGraphDeterminer: String, OpenGraphContent {
     case a
     case an

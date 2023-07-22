@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Gender used in ``OpenGraphTypeProfile``
 public enum OpenGraphGender: String {
     case female
     case male

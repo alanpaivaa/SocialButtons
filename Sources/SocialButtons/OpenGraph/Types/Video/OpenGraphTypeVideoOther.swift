@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Additional tags for the `video.other` type, see ``OpenGraphType``
 public final class OpenGraphTypeVideoOther: OpenGraphTypeMovie {
     override var type: String {
         "video.other"

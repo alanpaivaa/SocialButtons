@@ -8,6 +8,7 @@
 import Foundation
 import Plot
 
+/// Additional tags for the `video.episode` type, see ``OpenGraphType``
 public final class OpenGraphTypeEpisode: OpenGraphTypeMovie {
     private let seriesUrl: String?
 
@@ -15,6 +16,16 @@ public final class OpenGraphTypeEpisode: OpenGraphTypeMovie {
         "video.episode"
     }
 
+    /// Initializer
+    ///
+    /// - Parameters:
+    ///   - actorsUrls: **video:actor**, actors in the episode
+    ///   - directorsUrls: **video:director**, directors of the episode
+    ///   - writersUrls: **video:writer**, writers of the episode
+    ///   - duration: **video:duration**, the movie's length in episode
+    ///   - releaseDate: **video:release_date**, the date the episode was released
+    ///   - tags: **video:tag**, tag words associated with this episode
+    ///   - seriesUrl: **video:series**, which series this episode belongs to
     public init(actorsUrls: [String] = [],
                 directorsUrls: [String] = [],
                 writersUrls: [String] = [],
