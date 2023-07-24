@@ -16,5 +16,9 @@ extension Node<HTML.HeadContext> {
     public static func openGraphContent(_ content: OpenGraphContent?) -> Node {
         .unwrap(content) { $0.metaTags }
     }
+
+    static func twitterMetaTag<S: CustomStringConvertible>(named: String, value: S?) -> Node {
+        .unwrap(value, { .meta(.name(named), .content("\($0)")) })
+    }
 }
 
