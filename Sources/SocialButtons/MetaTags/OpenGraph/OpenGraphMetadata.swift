@@ -58,6 +58,7 @@ public struct OpenGraphMetadata: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
+            .comment("Open Graph Metadata"),
             .openGraphMetaTag(property: "og:title", content: title),
             .openGraphMetaTag(property: "og:description", content: description),
             .openGraphMetaTag(property: "og:site_name", content: siteName),

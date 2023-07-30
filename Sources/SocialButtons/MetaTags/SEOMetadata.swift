@@ -29,6 +29,7 @@ public struct SEOMetadata: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
+            .comment("SEO Metadata"),
             .encoding(charset),
             .unwrap(title, { .element(named: "title", text: $0) }),
             .unwrap(canonicalUrl, { .link(.rel(.canonical), .href($0)) }),

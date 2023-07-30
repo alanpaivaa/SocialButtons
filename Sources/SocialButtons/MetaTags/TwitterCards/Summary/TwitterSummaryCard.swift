@@ -32,6 +32,7 @@ public struct TwitterSummaryCard: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
+            .comment("Twitter Metadata"),
             .twitterMetaTag(name: "twitter:card", value: largeImage ? "summary_large_image" : "summary"),
             .twitterMetaTag(name: "twitter:title", value: title),
             .twitterMetaTag(name: "twitter:description", value: description),

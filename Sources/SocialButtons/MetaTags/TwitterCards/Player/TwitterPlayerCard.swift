@@ -35,6 +35,7 @@ public struct TwitterPlayerCard: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
+            .comment("Twitter Metadata"),
             .twitterMetaTag(name: "twitter:card", value: "player"),
             .twitterMetaTag(name: "twitter:title", value: title),
             .twitterMetaTag(name: "twitter:player", value: url),
