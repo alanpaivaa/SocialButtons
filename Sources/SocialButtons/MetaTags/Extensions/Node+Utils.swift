@@ -17,6 +17,10 @@ extension Node<HTML.HeadContext> {
         .unwrap(content, { .meta(.name(name), .content("\($0)")) })
     }
 
+    static func metaTag<S: CustomStringConvertible>(itemprop: String, content: S?) -> Node {
+        .unwrap(content, { .meta(.attribute(named: "itemprop", value: itemprop), .content("\($0)")) })
+    }
+
     static func openGraphMetaTag<S: CustomStringConvertible>(property: String, content: S?) -> Node {
         .metaTag(property: property, content: content)
     }

@@ -34,7 +34,11 @@ public struct SEOMetadata: MetaTaggableContent {
             .unwrap(title, { .element(named: "title", text: $0) }),
             .unwrap(canonicalUrl, { .link(.rel(.canonical), .href($0)) }),
             .metaTag(name: "description", content: description),
-            .metaTag(name: "image", content: imageUrl)
+            .metaTag(name: "image", content: imageUrl),
+            .comment("Schema.org"),
+            .metaTag(itemprop: "name", content: title),
+            .metaTag(itemprop: "description", content: description),
+            .metaTag(itemprop: "image", content: imageUrl)
         )
     }
 }
