@@ -71,7 +71,7 @@ public enum OpenGraphType: MetaTaggableContent {
         case .tvShow(let tvShow):
             return tvShow.metaTags
         case .website:
-            return .openGraphMetaTag(named: "og:type", value: "website")
+            return .openGraphMetaTag(name: "og:type", content: "website")
         }
     }
 }

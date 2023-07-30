@@ -58,10 +58,10 @@ public struct OpenGraphMetadata: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
-            .openGraphMetaTag(named: "og:title", value: title),
-            .openGraphMetaTag(named: "og:description", value: description),
-            .openGraphMetaTag(named: "og:site_name", value: siteName),
-            .openGraphMetaTag(named: "og:url", value: url),
+            .openGraphMetaTag(name: "og:title", content: title),
+            .openGraphMetaTag(name: "og:description", content: description),
+            .openGraphMetaTag(name: "og:site_name", content: siteName),
+            .openGraphMetaTag(name: "og:url", content: url),
             .metaContent(type),
             .metaContent(image),
             .metaContent(audio),

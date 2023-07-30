@@ -17,6 +17,6 @@ public enum OpenGraphDeterminer: String, MetaTaggableContent {
     case blank = ""
 
     public var metaTags: Node<HTML.HeadContext> {
-        .openGraphMetaTag(named: "og:determiner", value: rawValue)
+        .openGraphMetaTag(name: "og:determiner", content: rawValue)
     }
 }

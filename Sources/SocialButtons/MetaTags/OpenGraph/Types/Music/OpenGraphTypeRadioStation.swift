@@ -26,11 +26,11 @@ public struct OpenGraphTypeRadioStation: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         let tags: [Node<HTML.HeadContext>] = [
-            .openGraphMetaTag(named: "og:type", value: "music.radio_station"),
-            .openGraphMetaTag(named: "og:audio", value: url)
+            .openGraphMetaTag(name: "og:type", content: "music.radio_station"),
+            .openGraphMetaTag(name: "og:audio", content: url)
         ]
         let creatorsTags: [Node<HTML.HeadContext>] = creatorsUrls.map { creatorUrl in
-            .openGraphMetaTag(named: "music:creator", value: creatorUrl)
+            .openGraphMetaTag(name: "music:creator", content: creatorUrl)
         }
         return .group(tags + creatorsTags)
     }

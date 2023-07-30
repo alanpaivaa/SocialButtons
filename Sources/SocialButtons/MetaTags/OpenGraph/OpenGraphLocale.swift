@@ -25,9 +25,9 @@ public struct OpenGraphLocale: MetaTaggableContent {
     }
 
     public var metaTags: Node<HTML.HeadContext> {
-        let mainMember = Node<HTML.HeadContext>.openGraphMetaTag(named: "og:locale", value: identifier)
+        let mainMember = Node<HTML.HeadContext>.openGraphMetaTag(name: "og:locale", content: identifier)
         let alternateMembers = alternateIdentifiers.map { identifier -> Node<HTML.HeadContext> in
-                .openGraphMetaTag(named: "og:locale:alternate", value: identifier)
+                .openGraphMetaTag(name: "og:locale:alternate", content: identifier)
         }
         return .group([mainMember] + alternateMembers)
     }

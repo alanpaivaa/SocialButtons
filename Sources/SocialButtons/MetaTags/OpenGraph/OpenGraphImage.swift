@@ -38,16 +38,16 @@ public struct OpenGraphImage: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
-            .openGraphMetaTag(named: "og:image", value: url),
-            .openGraphMetaTag(named: "og:image:secure_url", value: secureUrl),
-            .openGraphMetaTag(named: "og:image:type", value: mimeType),
+            .openGraphMetaTag(name: "og:image", content: url),
+            .openGraphMetaTag(name: "og:image:secure_url", content: secureUrl),
+            .openGraphMetaTag(name: "og:image:type", content: mimeType),
             .unwrap(size, { imageSize in
                 Node.group(
-                    .openGraphMetaTag(named: "og:image:width", value: "\(Int(imageSize.width))"),
-                    .openGraphMetaTag(named: "og:image:height", value: "\(Int(imageSize.height))")
+                    .openGraphMetaTag(name: "og:image:width", content: "\(Int(imageSize.width))"),
+                    .openGraphMetaTag(name: "og:image:height", content: "\(Int(imageSize.height))")
                 )
             }),
-            .openGraphMetaTag(named: "og:image:alt", value: alt)
+            .openGraphMetaTag(name: "og:image:alt", content: alt)
         )
     }
 }

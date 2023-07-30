@@ -34,11 +34,11 @@ public struct OpenGraphTypeProfile: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
-            .openGraphMetaTag(named: "og:type", value: "profile"),
-            .openGraphMetaTag(named: "profile:first_name", value: firstName),
-            .openGraphMetaTag(named: "profile:last_name", value: lastName),
-            .openGraphMetaTag(named: "profile:username", value: username),
-            .openGraphMetaTag(named: "profile:gender", value: gender?.rawValue)
+            .openGraphMetaTag(name: "og:type", content: "profile"),
+            .openGraphMetaTag(name: "profile:first_name", content: firstName),
+            .openGraphMetaTag(name: "profile:last_name", content: lastName),
+            .openGraphMetaTag(name: "profile:username", content: username),
+            .openGraphMetaTag(name: "profile:gender", content: gender?.rawValue)
         )
     }
 }
