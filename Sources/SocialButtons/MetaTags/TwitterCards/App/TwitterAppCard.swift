@@ -26,8 +26,8 @@ public struct TwitterAppCard: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
-            .twitterMetaTag(named: "twitter:card", value: "app"),
-            .twitterMetaTag(named: "twitter:description", value: description),
+            .twitterMetaTag(name: "twitter:card", value: "app"),
+            .twitterMetaTag(name: "twitter:description", value: description),
             .metaContent(site),
             .metaContent(iOSApps),
             .metaContent(androidApp)

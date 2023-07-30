@@ -38,16 +38,16 @@ public struct OpenGraphTypeAlbum: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         let albumTags: [Node<HTML.HeadContext>] = [
-            .openGraphMetaTag(name: "og:type", content: "music.album"),
-            .openGraphMetaTag(name: "music:song:disc", content: disc),
-            .openGraphMetaTag(name: "music:song:track", content: track),
-            .openGraphMetaTag(name: "music:release_date", content: releaseDate?.iso8601DateFormatted())
+            .openGraphMetaTag(property: "og:type", content: "music.album"),
+            .openGraphMetaTag(property: "music:song:disc", content: disc),
+            .openGraphMetaTag(property: "music:song:track", content: track),
+            .openGraphMetaTag(property: "music:release_date", content: releaseDate?.iso8601DateFormatted())
         ]
         let musicianTags: [Node<HTML.HeadContext>] = musiciansUrls.map { profileUrl in
-            .openGraphMetaTag(name: "music:musician", content: profileUrl)
+            .openGraphMetaTag(property: "music:musician", content: profileUrl)
         }
         let songTags: [Node<HTML.HeadContext>] = songUrls.map { songUrl in
-            .openGraphMetaTag(name: "music:song", content: songUrl)
+            .openGraphMetaTag(property: "music:song", content: songUrl)
         }
         return .group(albumTags + musicianTags + songTags)
     }

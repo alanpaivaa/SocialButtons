@@ -34,15 +34,15 @@ public struct OpenGraphTypeBook: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         let nodes: [Node<HTML.HeadContext>] = [
-            .openGraphMetaTag(name: "og:type", content: "book"),
-            .openGraphMetaTag(name: "book:isbn", content: isbn),
-            .openGraphMetaTag(name: "book:release_date", content: releaseDate?.iso8601DateFormatted())
+            .openGraphMetaTag(property: "og:type", content: "book"),
+            .openGraphMetaTag(property: "book:isbn", content: isbn),
+            .openGraphMetaTag(property: "book:release_date", content: releaseDate?.iso8601DateFormatted())
         ]
         let authorsNodes: [Node<HTML.HeadContext>] = authorsUrls.map { authorUrl in
-            .openGraphMetaTag(name: "book:author", content: authorUrl)
+            .openGraphMetaTag(property: "book:author", content: authorUrl)
         }
         let tagsNodes: [Node<HTML.HeadContext>] = tags.map { tag in
-            .openGraphMetaTag(name: "book:tag", content: tag)
+            .openGraphMetaTag(property: "book:tag", content: tag)
         }
         return .group(nodes + authorsNodes + tagsNodes)
     }

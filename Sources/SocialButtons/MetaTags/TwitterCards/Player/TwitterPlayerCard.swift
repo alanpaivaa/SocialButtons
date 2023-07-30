@@ -35,11 +35,11 @@ public struct TwitterPlayerCard: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
-            .twitterMetaTag(named: "twitter:card", value: "player"),
-            .twitterMetaTag(named: "twitter:title", value: title),
-            .twitterMetaTag(named: "twitter:player", value: url),
-            .twitterMetaTag(named: "twitter:player:stream", value: rawFileUrl),
-            .twitterMetaTag(named: "twitter:description", value: description),
+            .twitterMetaTag(name: "twitter:card", value: "player"),
+            .twitterMetaTag(name: "twitter:title", value: title),
+            .twitterMetaTag(name: "twitter:player", value: url),
+            .twitterMetaTag(name: "twitter:player:stream", value: rawFileUrl),
+            .twitterMetaTag(name: "twitter:description", value: description),
             .metaContent(size),
             .metaContent(site),
             .metaContent(image)

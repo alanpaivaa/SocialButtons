@@ -19,8 +19,8 @@ public struct TwitterImage: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
-            .twitterMetaTag(named: "twitter:image", value: url),
-            .twitterMetaTag(named: "twitter:image:alt", value: alt)
+            .twitterMetaTag(name: "twitter:image", value: url),
+            .twitterMetaTag(name: "twitter:image:alt", value: alt)
         )
     }
 }

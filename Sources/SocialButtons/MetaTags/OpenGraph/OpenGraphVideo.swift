@@ -34,13 +34,13 @@ public struct OpenGraphVideo: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
-            .openGraphMetaTag(name: "og:video", content: url),
-            .openGraphMetaTag(name: "og:video:secure_url", content: secureUrl),
-            .openGraphMetaTag(name: "og:video:type", content: mimeType),
+            .openGraphMetaTag(property: "og:video", content: url),
+            .openGraphMetaTag(property: "og:video:secure_url", content: secureUrl),
+            .openGraphMetaTag(property: "og:video:type", content: mimeType),
             .unwrap(size, { size in
                 Node.group(
-                    .openGraphMetaTag(name: "og:video:width", content: "\(Int(size.width))"),
-                    .openGraphMetaTag(name: "og:video:height", content: "\(Int(size.height))")
+                    .openGraphMetaTag(property: "og:video:width", content: "\(Int(size.width))"),
+                    .openGraphMetaTag(property: "og:video:height", content: "\(Int(size.height))")
                 )
             })
         )

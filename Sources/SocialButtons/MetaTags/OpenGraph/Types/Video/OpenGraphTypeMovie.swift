@@ -46,21 +46,21 @@ open class OpenGraphTypeMovie {
 
     var metaTags: Node<HTML.HeadContext> {
         let actorsTags: [Node<HTML.HeadContext>] = actorsUrls.map { actorUrl in
-            .openGraphMetaTag(name: "video:actor", content: actorUrl)
+            .openGraphMetaTag(property: "video:actor", content: actorUrl)
         }
         let directorsTags: [Node<HTML.HeadContext>] = directorsUrls.map { directorUrl in
-            .openGraphMetaTag(name: "video:director", content: directorUrl)
+            .openGraphMetaTag(property: "video:director", content: directorUrl)
         }
         let writersTags: [Node<HTML.HeadContext>] = writersUrls.map { writerUrl in
-            .openGraphMetaTag(name: "video:writer", content: writerUrl)
+            .openGraphMetaTag(property: "video:writer", content: writerUrl)
         }
         let tags: [Node<HTML.HeadContext>] = tags.map { tag in
-            .openGraphMetaTag(name: "video:tag", content: tag)
+            .openGraphMetaTag(property: "video:tag", content: tag)
         }
         let tagsNodes: [Node<HTML.HeadContext>] = [
-            .openGraphMetaTag(name: "og:type", content: type),
-            .openGraphMetaTag(name: "video:duration", content: duration),
-            .openGraphMetaTag(name: "video:release_date", content: releaseDate?.iso8601DateFormatted())
+            .openGraphMetaTag(property: "og:type", content: type),
+            .openGraphMetaTag(property: "video:duration", content: duration),
+            .openGraphMetaTag(property: "video:release_date", content: releaseDate?.iso8601DateFormatted())
         ]
         return .group(tagsNodes + actorsTags + directorsTags + writersTags + tags)
     }

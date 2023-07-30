@@ -24,8 +24,8 @@ public struct TwitterSite: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
-            .twitterMetaTag(named: "twitter:site", value: username),
-            .twitterMetaTag(named: "twitter:site:id", value: id)
+            .twitterMetaTag(name: "twitter:site", value: username),
+            .twitterMetaTag(name: "twitter:site:id", value: id)
         )
     }
 }

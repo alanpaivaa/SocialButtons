@@ -48,7 +48,7 @@ public final class OpenGraphTypeEpisode: OpenGraphTypeMovie {
         let inheritedTags = super.metaTags
         return .group(
             inheritedTags,
-            .openGraphMetaTag(name: "video:series", content: seriesUrl)
+            .openGraphMetaTag(property: "video:series", content: seriesUrl)
         )
     }
 }

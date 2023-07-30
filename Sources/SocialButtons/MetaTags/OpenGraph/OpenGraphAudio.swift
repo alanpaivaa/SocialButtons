@@ -30,9 +30,9 @@ public struct OpenGraphAudio: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
-            .openGraphMetaTag(name: "og:audio", content: url),
-            .openGraphMetaTag(name: "og:audio:secure_url", content: secureUrl),
-            .openGraphMetaTag(name: "og:audio:type", content: mimeType)
+            .openGraphMetaTag(property: "og:audio", content: url),
+            .openGraphMetaTag(property: "og:audio:secure_url", content: secureUrl),
+            .openGraphMetaTag(property: "og:audio:type", content: mimeType)
         )
     }
 }

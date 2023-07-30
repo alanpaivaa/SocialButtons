@@ -34,15 +34,15 @@ public struct OpenGraphTypePlaylist: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         let tags: [Node<HTML.HeadContext>] = [
-            .openGraphMetaTag(name: "og:type", content: "music.playlist"),
-            .openGraphMetaTag(name: "music:song:disc", content: disc),
-            .openGraphMetaTag(name: "music:song:track", content: track)
+            .openGraphMetaTag(property: "og:type", content: "music.playlist"),
+            .openGraphMetaTag(property: "music:song:disc", content: disc),
+            .openGraphMetaTag(property: "music:song:track", content: track)
         ]
         let songTags: [Node<HTML.HeadContext>] = songUrls.map { songUrl in
-            .openGraphMetaTag(name: "music:song", content: songUrl)
+            .openGraphMetaTag(property: "music:song", content: songUrl)
         }
         let creatorsTags: [Node<HTML.HeadContext>] = creatorsUrls.map { creatorUrl in
-            .openGraphMetaTag(name: "music:creator", content: creatorUrl)
+            .openGraphMetaTag(property: "music:creator", content: creatorUrl)
         }
         return .group(tags + songTags + creatorsTags)
     }

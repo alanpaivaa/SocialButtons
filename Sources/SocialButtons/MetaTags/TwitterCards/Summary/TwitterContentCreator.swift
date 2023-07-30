@@ -24,8 +24,8 @@ public struct TwitterContentCreator: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
-            .twitterMetaTag(named: "twitter:creator", value: username),
-            .twitterMetaTag(named: "twitter:creator:id", value: id)
+            .twitterMetaTag(name: "twitter:creator", value: username),
+            .twitterMetaTag(name: "twitter:creator:id", value: id)
         )
     }
 }

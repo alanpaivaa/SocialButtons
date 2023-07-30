@@ -42,17 +42,17 @@ public struct OpenGraphTypeArticle: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         let nodes: [Node<HTML.HeadContext>] = [
-            .openGraphMetaTag(name: "og:type", content: "article"),
-            .openGraphMetaTag(name: "article:published_time", content: publishedTime?.iso8601DateTimeFormatted()),
-            .openGraphMetaTag(name: "article:modified_time", content: modifiedTime?.iso8601DateTimeFormatted()),
-            .openGraphMetaTag(name: "article:expiration_time", content: expirationTime?.iso8601DateTimeFormatted()),
-            .openGraphMetaTag(name: "article:section", content: section)
+            .openGraphMetaTag(property: "og:type", content: "article"),
+            .openGraphMetaTag(property: "article:published_time", content: publishedTime?.iso8601DateTimeFormatted()),
+            .openGraphMetaTag(property: "article:modified_time", content: modifiedTime?.iso8601DateTimeFormatted()),
+            .openGraphMetaTag(property: "article:expiration_time", content: expirationTime?.iso8601DateTimeFormatted()),
+            .openGraphMetaTag(property: "article:section", content: section)
         ]
         let authorsNodes: [Node<HTML.HeadContext>] = authorsUrls.map { authorUrl in
-            .openGraphMetaTag(name: "article:author", content: authorUrl)
+            .openGraphMetaTag(property: "article:author", content: authorUrl)
         }
         let tagsNodes: [Node<HTML.HeadContext>] = self.tags.map { tag in
-            .openGraphMetaTag(name: "article:tag", content: tag)
+            .openGraphMetaTag(property: "article:tag", content: tag)
         }
         return .group(nodes + authorsNodes + tagsNodes)
     }

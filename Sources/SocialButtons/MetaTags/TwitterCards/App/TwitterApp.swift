@@ -32,9 +32,9 @@ public class TwitterApp: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
-            .twitterMetaTag(named: "twitter:app:id:\(platform.rawValue)", value: id),
-            .twitterMetaTag(named: "twitter:app:url:\(platform.rawValue)", value: url),
-            .twitterMetaTag(named: "twitter:app:name:\(platform.rawValue)", value: name)
+            .twitterMetaTag(name: "twitter:app:id:\(platform.rawValue)", value: id),
+            .twitterMetaTag(name: "twitter:app:url:\(platform.rawValue)", value: url),
+            .twitterMetaTag(name: "twitter:app:name:\(platform.rawValue)", value: name)
         )
     }
 }
@@ -72,7 +72,7 @@ public struct TwitterIOSApps: MetaTaggableContent {
         .group(
             .metaContent(iphone),
             .metaContent(ipad),
-            .twitterMetaTag(named: "twitter:app:country", value: country)
+            .twitterMetaTag(name: "twitter:app:country", value: country)
         )
     }
 }

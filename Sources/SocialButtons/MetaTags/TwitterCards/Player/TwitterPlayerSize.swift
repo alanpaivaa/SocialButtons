@@ -19,8 +19,8 @@ public struct TwitterPlayerSize: MetaTaggableContent {
 
     public var metaTags: Node<HTML.HeadContext> {
         .group(
-            .twitterMetaTag(named: "twitter:player:width", value: width),
-            .twitterMetaTag(named: "twitter:player:height", value: height)
+            .twitterMetaTag(name: "twitter:player:width", value: width),
+            .twitterMetaTag(name: "twitter:player:height", value: height)
         )
     }
 }
