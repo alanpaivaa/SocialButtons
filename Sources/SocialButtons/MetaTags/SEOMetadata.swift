@@ -1,5 +1,5 @@
 //
-//  SEOTags.swift
+//  SEOMetadata.swift
 //  
 //
 //  Created by Alan Paiva on 7/30/23.
@@ -8,7 +8,7 @@
 import Foundation
 import Plot
 
-public struct SEOTags: MetaTaggableContent {
+public struct SEOMetadata: MetaTaggableContent {
     private let title: String?
     private let description: String?
     private let imageUrl: String?

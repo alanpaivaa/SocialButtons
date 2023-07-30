@@ -21,6 +21,10 @@ extension Node<HTML.HeadContext> {
         .group(content.compactMap { $0?.metaTags })
     }
 
+    public static func metaContent(_ content: [MetaTaggableContent]) -> Node {
+        .group(content.map { $0.metaTags })
+    }
+
     static func twitterMetaTag<S: CustomStringConvertible>(named: String, value: S?) -> Node {
         .unwrap(value, { .meta(.name(named), .content("\($0)")) })
     }
