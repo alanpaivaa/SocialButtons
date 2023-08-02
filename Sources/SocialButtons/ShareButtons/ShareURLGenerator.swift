@@ -7,7 +7,8 @@
 
 import Foundation
 
-public enum SocialMedia {
+public enum SocialMedia: String {
+    case facebook
     case linkedIn
     case twitter
 }
@@ -25,7 +26,7 @@ public protocol ShareURLGenerating {
     func make(socialMedia: SocialMedia, text: String, url: URL?, hashTags: [String], via: String?, related: [String]) -> URL?
 }
 
-public class ShareURLGenerator {
+public class ShareURLGenerator: ShareURLGenerating {
     public init() {}
 
     public func make(socialMedia: SocialMedia, text: String, url: URL?, hashTags: [String], via: String?, related: [String]) -> URL? {
@@ -34,6 +35,9 @@ public class ShareURLGenerator {
         }
 
         switch socialMedia {
+        case .facebook:
+            let generator = FacebookShareURLGenerator()
+            return generator.make(url: url)
         case .linkedIn:
             let generator = LinkedInShareURLGenerator()
             return generator.make(url: url)
